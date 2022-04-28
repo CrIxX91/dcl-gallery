@@ -1,5 +1,5 @@
-package-lock.json
-*.js
-node_modules
-bin/ 
-*.blend
+/node_modules
+npm-debug.log
+.DS_Store
+/*.env
+bin
