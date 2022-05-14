@@ -1,4 +1,19 @@
 import * as colum from "./colum";
+import { F0_1 } from "./F0_1";
+import { F0_2 } from "./F0_2";
+import { F1_1 } from "./F1_1";
+import { F1_2 } from "./F1_2";
+import { F2_1 } from "./F2_1";
+import { F2_2 } from "./F2_2";
+import { F3_1 } from "./F3_1";
+import { F3_2 } from "./F3_2";
+import { F4_1 } from "./F4_1";
+import { F4_2 } from "./F4_2";
+import { F5_1 } from "./F5_1";
+import { F5_2 } from "./F5_2";
+import { F6_1 } from "./F6_1";
+import { F6_2 } from "./F6_2";
+import { Nftframe } from './interface/configinterface';
 
 const _scene = new Entity('_scene')
 engine.addEntity(_scene)
@@ -241,10 +256,18 @@ let flooract = 0;
 // let poscolumz =10.5;
 // let poscolumy =12;
 
-let positiony:number[] =[2,8,13,18,23,28,33]
-let positionsx:number[] = [11.5,11.5,11.5,11.5,11.5,11.5,11.5,11.5];
-let positionz:number[] =[13.5,17,17,17,17,17,17];
-
+let positiony:number[]  =  [2,8,13,18,23,28,33]
+let positionsx:number[] =  [11.5,11.5,11.5,11.5,11.5,11.5,11.5,11.5];
+let positionz:number[]  =  [13.5,17,17,17,17,17,17];
+let nftlisk:Nftframe[][] = [
+  F0_1,F0_2,
+  F1_1,F1_2,
+  F2_1,F2_2,
+  F3_1,F3_2,
+  F4_1,F4_2,
+  F5_1,F5_2,
+  F6_1,F6_2,
+];
 //2
 //11.5
 //13.5
@@ -286,7 +309,7 @@ for (var _i = 0; _i < 56; _i++) {
     }
   }
   positionact = new Vector3(poscolumx, poscolumy, poscolumz);
-  colum.CreateColum(positionact, materialact);
+  colum.CreateColum(positionact, materialact,nftlisk[flooract]);
   poscolumx += 9;
 }
 

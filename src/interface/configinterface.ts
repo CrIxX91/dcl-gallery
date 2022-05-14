@@ -8,6 +8,6 @@ export interface Piso {
 }
 
 export interface Nftframe {
-    id:  number;
+    id:number;
     url: string;
 }

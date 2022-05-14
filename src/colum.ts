@@ -1,4 +1,5 @@
-import { F0 } from './F0Config';
+// import { F0 } from './F0';
+import { Nftframe } from './interface/configinterface';
 
 
 let id = 1;
@@ -31,10 +32,10 @@ function GetUVNFT(plane:PlaneShape, currSpriteCel:number) {
     //return plane
 }
 
-function DrawNFT(parent:Entity, material:Material, num:number) {
+function DrawNFT(parent:Entity, material:Material, num:number,nftlist:Nftframe[]) {
     let pos = new Vector3(1.01, 2, 0)
     let rot = Quaternion.Euler(0, 90, 0);
-    let url = F0[id-1].url;
+    let url = nftlist[id-1].url;
 
     switch (num + 1) {
         case 3:
@@ -83,7 +84,7 @@ function DrawNFT(parent:Entity, material:Material, num:number) {
 }
 
 
-export function CreateColum(position:Vector3, atlasmaterial:Material) {
+export function CreateColum(position:Vector3, atlasmaterial:Material,nftlink:Nftframe[]) {
 
     const simplenft = new Entity();
     const gltfShape = new GLTFShape("Models/ColumnaPrefab.glb")
@@ -98,7 +99,7 @@ export function CreateColum(position:Vector3, atlasmaterial:Material) {
     engine.addEntity(simplenft)
 
     for (var _i = 0; _i < 4; _i++) {
-        DrawNFT(simplenft, atlasmaterial, _i)
+        DrawNFT(simplenft, atlasmaterial, _i,nftlink)
     }
     return simplenft
 }
